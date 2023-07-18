@@ -8,7 +8,7 @@ const {
     updateUserHandler
 } = require('../handlers/usersHandlers');
 
-usersRouter.get('/', getUsersHandler);
+usersRouter.get('/usuarios', getUsersHandler);
 usersRouter.post('/', createUserHandler);
 usersRouter.get('/:id', getUserHandler);
 usersRouter.put('/:id', updateUserHandler);
