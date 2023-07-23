@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
             defaultValue: DataTypes.UUIDV4, // Para que se genere automáticamente
         },
         Rol_Id: {
-            type: DataTypes.ENUM("1", "2"), // 1= Administrador y 2= Usuarios
+            type: DataTypes.ENUM("1", "2", "3", "4"), // 1= Administrador , 2= Voluntario , 3=Empleado, 4=Adoptante
             defaultValue: "2",
             // type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
             // allowNull: false,
