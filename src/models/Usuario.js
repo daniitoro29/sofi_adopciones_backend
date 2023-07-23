@@ -40,6 +40,7 @@ module.exports = (sequelize) => {
         Usu_Estado: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: "Activo"
         },
     }, {timestamps: false} // Para que no agregue campos de fecha y hora de creación por defecto
     )
