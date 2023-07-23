@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('rol', {
     Rol_Id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.ENUM("1", "2"), // 1= Administrador y 2= Usuarios
+      defaultValue: "2",
       primaryKey: true,
-      autoIncrement: true, 
     },
     Rol_Nombre: {
       type: DataTypes.STRING,
