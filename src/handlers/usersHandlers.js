@@ -1,4 +1,4 @@
-const { createUser, getUserById, deleteUserById, getAllUser, updateUserById } = require('../controllers/usersControllers');
+const { createUser, getUserById, deleteUserById, getAllUser, updateUserById, banUserById} = require('../controllers/usersControllers');
 
 
 // Crear un usuario
@@ -69,6 +69,17 @@ const updateUserHandler = async (req, res) => {
     
 }
 
+// Banear un usuario
+const banerUserHanler = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const BanUser = await banUserById(id);
+    res.json(BanUser);
+} catch(error){
+  res.status(400).json({error: error.message});
+}
+}
+
 
 
 module.exports = {
@@ -76,5 +87,6 @@ module.exports = {
   getUsersHandler,
   createUserHandler,
   deleteUserHandler,
-  updateUserHandler
+  updateUserHandler,
+  banerUserHanler
 };
