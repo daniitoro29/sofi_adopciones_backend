@@ -11,7 +11,8 @@ const createPet = async (
  Mas_Fecha_Rescate,
  Mas_Lugar_Rescate,
  Mas_Edad,
- Mas_Estado_Adopcion
+ Mas_Estado_Adopcion,
+ Vol_Id
 ) =>
  await Mascota.create({
   Mas_Nombre,
@@ -25,6 +26,7 @@ const createPet = async (
   Mas_Lugar_Rescate,
   Mas_Edad,
   Mas_Estado_Adopcion,
+  Vol_Id
  });
 
  const getAllPets = async () => await Mascota.findAll();

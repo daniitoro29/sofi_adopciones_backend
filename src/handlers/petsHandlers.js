@@ -11,7 +11,7 @@ const createPetHandler = async (req,res) => {
         Mas_Fecha_Rescate,
         Mas_Lugar_Rescate,
         Mas_Edad,
-        Mas_Estado_Adopcion} = req.body;
+        Mas_Estado_Adopcion, Vol_Id} = req.body;
         try {
             const newPet = await createPet(Mas_Nombre,
                 Mas_Especie,
@@ -23,7 +23,7 @@ const createPetHandler = async (req,res) => {
                 Mas_Fecha_Rescate,
                 Mas_Lugar_Rescate,
                 Mas_Edad,
-                Mas_Estado_Adopcion)
+                Mas_Estado_Adopcion, Vol_Id)
             res.send(newPet);
         } catch (error) {
             res.status(400).json({error: error.message});
@@ -61,7 +61,8 @@ const updatePetByIdHandler = async (req, res) => {
         Mas_Fecha_Rescate,
         Mas_Lugar_Rescate,
         Mas_Edad,
-        Mas_Estado_Adopcion} = req.body;
+        Mas_Estado_Adopcion,
+    Vol_Id} = req.body;
     try {
         const updatePet = await updatePetById(id, Mas_Nombre,
             Mas_Especie,
@@ -73,7 +74,7 @@ const updatePetByIdHandler = async (req, res) => {
             Mas_Fecha_Rescate,
             Mas_Lugar_Rescate,
             Mas_Edad,
-            Mas_Estado_Adopcion);
+            Mas_Estado_Adopcion, Vol_Id);
             res.send(updatePet);
     } catch (error) {
         res.status(400).json({error: error.message});
