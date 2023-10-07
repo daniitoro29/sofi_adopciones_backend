@@ -52,6 +52,9 @@ module.exports = (sequelize) => {
     Mas_Estado_Adopcion: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
+    },
+    Vol_Id: {
+        type: DataTypes.UUID,
+    },
   }, {timestamps: false});
 };

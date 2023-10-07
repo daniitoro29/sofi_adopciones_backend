@@ -9,7 +9,7 @@ module.exports = (sequelize) => {
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,
     },
-    Usu_Id: {
+/*     Usu_Id: {
         type: DataTypes.UUID,
     },
     Mas_Id:{
@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
     ,
     Emp_Id:{
         type: DataTypes.UUID,
-    },
+    }, */
     Cam_Lugar:{
         type: DataTypes.STRING,
         allowNull: false,

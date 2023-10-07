@@ -10,9 +10,8 @@ module.exports = (sequelize) => {
       autoIncrement: true, 
     },
     Rol_Nombre: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM('Administrador', 'Voluntario', 'Adoptante'),
       allowNull: false,
-
     }
   }, {timestamps: false});
 };

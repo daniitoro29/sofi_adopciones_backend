@@ -40,14 +40,11 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Rol, Usuario, Empleado,Voluntario, Adoptante, Mascota, Adopcion, Campana } = sequelize.models;
+const { Rol, Usuario,Voluntario, Adoptante, Mascota, Participantes, Campana, Proceso } = sequelize.models;
 
 // Aca vendrian las relaciones
 Rol.hasMany(Usuario, {foreignKey: 'Rol_Id'});
 Usuario.belongsTo(Rol, {foreignKey: 'Rol_Id'});
-
-Usuario.hasOne(Empleado, {foreignKey: 'Usu_Id'});
-Empleado.belongsTo(Usuario, {foreignKey: 'Usu_Id'});
 
 Usuario.hasOne(Voluntario, { foreignKey: 'Usu_Id' });
 Voluntario.belongsTo(Usuario, { foreignKey: 'Usu_Id' });
@@ -58,11 +55,26 @@ Adoptante.belongsTo(Usuario, { foreignKey: 'Usu_Id' });
 Mascota.hasMany(Adoptante, {foreignKey: 'Mas_Id'});
 Adoptante.belongsTo(Mascota, {foreignKey: 'Mas_Id'});
 
-Adoptante.hasMany(Adopcion, {foreignKey: 'Ado_User_Id'});
-Adopcion.belongsTo(Adoptante, {foreignKey: 'Ado_User_Id'});
+Mascota.hasMany(Proceso, {foreignKey: 'Mas_Id'});
+Proceso.belongsTo(Mascota, {foreignKey: 'Mas_Id'});
 
-Campana.hasMany(Voluntario, {foreignKey: 'Usu_Id'});
-Voluntario.belongsTo(Campana, {foreignKey: 'Usu_Id'});
+Mascota.hasMany(Voluntario, {foreignKey: 'Vol_Id'});
+Voluntario.belongsTo(Mascota, {foreignKey: 'Vol_Id'});
+
+Adoptante.hasMany(Proceso, {foreignKey: 'Ado_User_Id'});
+Proceso.belongsTo(Adoptante, {foreignKey: 'Ado_User_Id'});
+
+Campana.hasMany(Participantes, {foreignKey: 'Cam_Id'});
+Participantes.belongsTo(Campana, {foreignKey: 'Cam_Id'});
+
+Voluntario.hasMany(Participantes, {foreignKey: 'Vol_Id'});
+Participantes.belongsTo(Voluntario, {foreignKey: 'Vol_Id'});
+
+Adoptante.hasMany(Participantes, {foreignKey: 'Ado_User_Id'});
+Participantes.belongsTo(Adoptante, {foreignKey: 'Ado_User_Id'});
+
+Mascota.hasMany(Participantes, {foreignKey: 'Mas_Id'});
+Participantes.belongsTo(Mascota, {foreignKey: 'Mas_Id'});
 
 module.exports = {
    ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
