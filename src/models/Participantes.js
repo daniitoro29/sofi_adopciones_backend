@@ -21,8 +21,5 @@ module.exports = (sequelize) => {
     Mas_Id:{
         type: DataTypes.UUID,
     },
-    Ado_User_Id: {
-        type: DataTypes.UUID,
-    }
   }, {timestamps: false});
 };
