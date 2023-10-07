@@ -20,9 +20,9 @@ const getAllParticipantCampaingHandler = async (req, res) => {
 }
 
 const deleteParticipantCampaingByIdHandler = async (req,res) => {
-    const {Part_Id} = req.params;
+    const {id} = req.params;
     try {
-        const deleteParticipateCampaing = await deleteParticipantCampaingById(Part_Id);
+        const deleteParticipateCampaing = await deleteParticipantCampaingById(id);
         res.send(deleteParticipateCampaing);
     } catch (error) {
         res.status(400).json({error: error.message});
@@ -30,10 +30,10 @@ const deleteParticipantCampaingByIdHandler = async (req,res) => {
 }
 
 const updateParticipantCampaingByIdHandler = async (req, res) => {
-    const {Part_Id} = req.params;
+    const {id} = req.params;
     const {Mam_Id,Vol_Id,Ado_User_Id,Mas_Id} = req.body;
     try {
-        const updateParticipantCampaing = await updateParticipantCampaingById(Part_Id, Mam_Id,Vol_Id,Ado_User_Id,Mas_Id);
+        const updateParticipantCampaing = await updateParticipantCampaingById(id, Mam_Id,Vol_Id,Ado_User_Id,Mas_Id);
             res.send(updateParticipantCampaing);
     } catch (error) {
         res.status(400).json({error: error.message});
