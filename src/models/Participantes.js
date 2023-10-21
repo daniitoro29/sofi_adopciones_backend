@@ -10,16 +10,20 @@ module.exports = (sequelize) => {
         autoIncrement: true, 
     },
     Cam_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
     Vol_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
     Ado_User_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
     Mas_Id:{
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
   }, {timestamps: false});
 };

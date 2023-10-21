@@ -23,10 +23,12 @@ module.exports = (sequelize) => {
     }
     ,
     Mas_Id:{
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
     Ado_User_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     }
   }, {timestamps: false});
 };

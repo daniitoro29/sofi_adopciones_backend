@@ -5,9 +5,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('mascota', {
     Mas_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4, // Para que se genere automáticamente
+        autoIncrement: true, 
     },
     Mas_Nombre: {
         type: DataTypes.STRING,
@@ -54,7 +54,8 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
     Vol_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        allowNull: false,
     },
   }, {timestamps: false});
 };

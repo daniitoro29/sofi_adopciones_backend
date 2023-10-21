@@ -5,15 +5,17 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('adoptante', {
     Ado_User_Id: {
-        type: DataTypes.UUID,
-        primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true, 
     },
     Usu_Id: {
-        type: DataTypes.UUID,
+      type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+      allowNull: false,
     },
     Mas_Id:{
-        type: DataTypes.UUID,
+      type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+      allowNull: false,
     }
   }, {timestamps: false});
 };

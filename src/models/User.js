@@ -3,9 +3,9 @@ const {DataTypes} = require('sequelize');
 module.exports = (sequelize) => {
     sequelize.define('usuario', {
         Usu_Id: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            defaultValue: DataTypes.UUIDV4, // Para que se genere automáticamente
+            autoIncrement: true, 
         },
         Rol_Id: {
             type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
