@@ -1,16 +1,26 @@
-const { createUser, getUserById, deleteUserById, getAllUser, updateUserById } = require('../controllers/usersControllers');
+const { createUser, getUserById, deleteUserById, getAllUser, updateUserById, banUserById} = require('../controllers/usersControllers');
+
 
 // Crear un usuario
 const createUserHandler = async (req, res) => {
-    const { Rol_Id, Usu_Nombre, Usu_Apellido,Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado} = req.body;
+    console.log('Se esta llamando la función de crear un usuario', req.body);
+    const {Rol_Id, Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado } = req.body;
     try {
-        const newUser = await createUser( Rol_Id, Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero,Usu_Estado);
+      if (
+        Usu_Nombre.length < 3 || Usu_Apellido.length < 3 || Usu_Telefono.length < 7 || !Usu_Correo || Usu_Contraseña.length < 7 ||!Usu_Genero ||!Usu_Estado ) 
+      {
+        res.status(400).json({ message: "Datos inválidos o incorrectos" });
+      } else {
+        const newUser = await createUser(Rol_Id, Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado);
         res.json(newUser);
+      }
     } catch (error) {
-        res.status(400).json({error: error.message});
+      res.status(400).json({ error: error.message });
     }
-
-};
+  };
+  
+  
+  
 
 // Traer todos los usuarios
 const getUsersHandler = async (req, res) => {
@@ -60,6 +70,17 @@ const updateUserHandler = async (req, res) => {
     
 }
 
+// Banear un usuario
+const banerUserHanler = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const BanUser = await banUserById(id);
+    res.json(BanUser);
+} catch(error){
+  res.status(400).json({error: error.message});
+}
+}
+
 
 
 module.exports = {
@@ -67,5 +88,6 @@ module.exports = {
   getUsersHandler,
   createUserHandler,
   deleteUserHandler,
-  updateUserHandler
+  updateUserHandler,
+  banerUserHanler
 };

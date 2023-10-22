@@ -33,4 +33,38 @@ const updateUserById = async(id, Usu_Nombre, Usu_Apellido,Usu_Telefono, Usu_Corr
     return userUpdate;
 }
 
-module.exports = { createUser, getUserById, deleteUserById, getAllUser, updateUserById };
+// Banear un usuario
+const banUserById = async (Usu_Id) => {
+    try {
+      // Buscar el usuario por su ID en la base de datos
+      const user = await Usuario.findByPk(Usu_Id);
+  
+      // Verificar si se encontró el usuario
+      if (!user) {
+        throw new Error("Usuario no encontrado");
+      }
+  
+      // Cambiar el estado del usuario en función de su estado actual
+      const newEstado = user.Usu_Estado === "Activo" ? "Inactivo" : "Activo";
+  
+      // Actualizar el estado del usuario en la base de datos
+      await Usuario.update(
+        { Usu_Estado: newEstado },
+        {
+          where: {
+            Usu_Id: Usu_Id,
+          },
+        }
+      );
+  
+      console.log("Estado del usuario actualizado exitosamente");
+    } catch (error) {
+      console.error("Error al actualizar el estado del usuario:", error);
+      throw error; // Opcional: relanza el error para que pueda ser capturado en la llamada a esta función
+    }
+  };
+  
+
+
+
+module.exports = { createUser, getUserById, deleteUserById, getAllUser, updateUserById, banUserById };

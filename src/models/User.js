@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
             autoIncrement: true, 
         },
         Rol_Id: {
-            type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+            type: DataTypes.INTEGER, 
             allowNull: false,
           },
         Usu_Nombre: {
@@ -38,6 +38,7 @@ module.exports = (sequelize) => {
         Usu_Estado: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: "Activo"
         },
     }, {timestamps: false} // Para que no agregue campos de fecha y hora de creación por defecto
     )
