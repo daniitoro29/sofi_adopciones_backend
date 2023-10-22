@@ -28,7 +28,8 @@ const getRolesHandler = async (req, res) => {
     } = req.params
     try {
       const deleteRol = await deleteRolById(id);
-      res.send(deleteRol);
+      console.log('Se eliminó el rol **');
+      res.res.sendStatus(deleteRol);
     } catch (error) {
       res.status(400).json({error: error.message});
     }

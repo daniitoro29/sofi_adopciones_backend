@@ -8,10 +8,8 @@ module.exports = (sequelize) => {
             autoIncrement: true, 
         },
         Rol_Id: {
-            type: DataTypes.ENUM("1", "2", "3", "4"), // 1= Administrador , 2= Voluntario , 3=Empleado, 4=Adoptante
-            // defaultValue: "3",
-            // type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
-            // allowNull: false,
+            type: DataTypes.INTEGER, 
+            allowNull: false,
           },
         Usu_Nombre: {
             type: DataTypes.STRING,

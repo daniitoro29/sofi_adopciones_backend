@@ -3,14 +3,15 @@ const { createUser, getUserById, deleteUserById, getAllUser, updateUserById, ban
 
 // Crear un usuario
 const createUserHandler = async (req, res) => {
-    const { Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado, Rol_Id } = req.body;
+    console.log('Se esta llamando la función de crear un usuario', req.body);
+    const {Rol_Id, Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado } = req.body;
     try {
       if (
         Usu_Nombre.length < 3 || Usu_Apellido.length < 3 || Usu_Telefono.length < 7 || !Usu_Correo || Usu_Contraseña.length < 7 ||!Usu_Genero ||!Usu_Estado ) 
       {
         res.status(400).json({ message: "Datos inválidos o incorrectos" });
       } else {
-        const newUser = await createUser(Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado, Rol_Id);
+        const newUser = await createUser(Rol_Id, Usu_Nombre, Usu_Apellido, Usu_Telefono, Usu_Correo, Usu_Contraseña, Usu_Genero, Usu_Estado);
         res.json(newUser);
       }
     } catch (error) {
