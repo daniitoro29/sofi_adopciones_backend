@@ -9,9 +9,8 @@ module.exports = (sequelize) => {
       primaryKey: true,
     },
     Rol_Nombre: {
-      type: DataTypes.STRING,
+      type: DataTypes.ENUM('Administrador', 'Voluntario', 'Adoptante'),
       allowNull: false,
-
     }
   }, {timestamps: false});
 };

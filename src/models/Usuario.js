@@ -3,9 +3,9 @@ const {DataTypes} = require('sequelize');
 module.exports = (sequelize) => {
     sequelize.define('usuario', {
         Usu_Id: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             primaryKey: true,
-            defaultValue: DataTypes.UUIDV4, // Para que se genere automáticamente
+            autoIncrement: true, 
         },
         Rol_Id: {
             type: DataTypes.ENUM("1", "2", "3", "4"), // 1= Administrador , 2= Voluntario , 3=Empleado, 4=Adoptante

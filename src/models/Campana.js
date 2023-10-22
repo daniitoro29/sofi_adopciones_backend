@@ -5,19 +5,9 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('campana', {
     Cam_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
-    },
-    Usu_Id: {
-        type: DataTypes.UUID,
-    },
-    Mas_Id:{
-        type: DataTypes.UUID,
-    }
-    ,
-    Emp_Id:{
-        type: DataTypes.UUID,
+        autoIncrement: true, 
     },
     Cam_Lugar:{
         type: DataTypes.STRING,

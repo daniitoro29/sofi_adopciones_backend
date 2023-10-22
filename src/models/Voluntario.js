@@ -5,12 +5,13 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('voluntario', {
     Vol_Id: {
-        type: DataTypes.UUID,
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4, // Para que se genere automáticamente
+        autoIncrement: true, 
     },
     Usu_Id: {
-        type: DataTypes.UUID,
+      type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+      allowNull: false,
     },
     Vol_Tipo_Ayuda: {
       type: DataTypes.STRING,
