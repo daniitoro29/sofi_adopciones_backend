@@ -1,8 +1,8 @@
 const { Usuario } = require("../db");
 
 // Esta función puede interactuar con el modelo
-const createUser = async (Usu_Nombre,Usu_Apellido,Usu_Telefono,Usu_Correo,Usu_Contraseña,Usu_Genero,Usu_Estado, Rol_Id
-    ) =>  await Usuario.create({Usu_Nombre,Usu_Apellido,Usu_Telefono,Usu_Correo,Usu_Contraseña,Usu_Genero,Usu_Estado, Rol_Id});
+const createUser = async (Rol_Id, Usu_Nombre,Usu_Apellido,Usu_Telefono,Usu_Correo,Usu_Contraseña,Usu_Genero,Usu_Estado
+    ) =>  await Usuario.create({ Rol_Id, Usu_Nombre,Usu_Apellido,Usu_Telefono,Usu_Correo,Usu_Contraseña,Usu_Genero,Usu_Estado});
 
 // Traer todos los usuarios
 const getAllUser = async() => await Usuario.findAll();
