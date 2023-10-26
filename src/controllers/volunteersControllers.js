@@ -3,7 +3,7 @@ const { Voluntario } = require("../db");
 
 const createVolunteer = async (Vol_Tipo_Ayuda, Vol_Fecha_Ayuda,Usu_Id) => await Voluntario.create({Vol_Tipo_Ayuda, Vol_Fecha_Ayuda,Usu_Id});
 
-const getAllVolunteers = async () => Voluntario.findAll();
+const getAllVolunteers = async () => await Voluntario.findAll();
 
 const deleteVolunteer = async (Vol_Id) => await Voluntario.destroy({
     where :{

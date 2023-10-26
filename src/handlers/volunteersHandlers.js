@@ -4,11 +4,12 @@ const {createVolunteer, getAllVolunteers, deleteVolunteer, updateVolunteerById} 
     const {
        Vol_Tipo_Ayuda, Vol_Fecha_Ayuda, Usu_Id
     } = req.body;
+    console.log('Req.body *****', req.body);
     try {
       const newVolunteer = await createVolunteer(Vol_Tipo_Ayuda, Vol_Fecha_Ayuda, Usu_Id);
       res.send(newVolunteer);
     } catch (error) {
-      res.status(400).json({error: error.message});
+      res.status(400).json({error: error});
     }
   };
 
