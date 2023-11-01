@@ -55,7 +55,7 @@ Adoptante.belongsTo(Usuario, { foreignKey: 'Usu_Id' });
 Mascota.hasMany(Adoptante, {foreignKey: 'Mas_Id'});
 Adoptante.belongsTo(Mascota, {foreignKey: 'Mas_Id'});
 
-Mascota.hasMany(Proceso, {foreignKey: 'Mas_Id'});
+Mascota.hasOne(Proceso, {foreignKey: 'Mas_Id'});
 Proceso.belongsTo(Mascota, {foreignKey: 'Mas_Id'});
 
 Mascota.belongsTo(Voluntario, {foreignKey: 'Vol_Id'});
