@@ -11,13 +11,14 @@ const getProcessHandler = async (req, res) => {
   
   const createProcessHandler = async (req, res) => {
     const {
+      Proc_Adop_Formulario,
         Proc_Ado_Fecha_Postulacion,
         Proc_Ado_Estado_Proceso,
         Mas_Id,
         Ado_User_Id
     } = req.body;
     try {
-      const newProcess = await createProcess(Proc_Ado_Fecha_Postulacion,
+      const newProcess = await createProcess(Proc_Adop_Formulario, Proc_Ado_Fecha_Postulacion,
         Proc_Ado_Estado_Proceso,
         Mas_Id,
         Ado_User_Id);

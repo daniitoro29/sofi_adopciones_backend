@@ -7,111 +7,111 @@ module.exports = (sequelize) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        Nombre: {
+        Form_Nombre: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        CedulaDocumento: {
+        Form_CedulaDocumento: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        Edad: {
+        Form_Edad: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        TelefonoCasa: {
+        Form_TelefonoCasa: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        Ocupacion: {
+        Form_Ocupacion: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        DireccionOficina: {
+        Form_Direccion: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        Telefono: {
+        Form_Telefono: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        Celular: {
+        Form_Celular: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        CorreoElectronico: {
+        Form_Correo: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        NumeroPersonasFamilia: {
+        Form_NumeroPersonasFamilia: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        Adultos: {
+        Form_Adultos: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        Ninos: {
+        Form_Ninos: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        Bebes: {
+        Form_Bebes: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        EdadFamiliares: {
+        Form_EdadFamiliares: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        MotivoAdopcion: {
+        Form_MotivoAdopcion: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ExperienciaMascotasAntes: {
+        Form_ExperienciaMascotasAntes: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        CausasNoTenerMascotaAhora: {
+        Form_CausasNoTenerMascotaAhora: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        AutorizacionAdopcion: {
+        Form_AutorizacionAdopcion: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        DecisionMiembrosHogar: {
+        Form_DecisionMiembrosHogar: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        AsuncionGastosMascota: {
+        Form_AsuncionGastosMascota: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        TienePatioTerrazaJardin: {
+        Form_TienePatioTerrazaJardin: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        Cubierto: {
+        Form_Cubierto: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         },
-        DestinoViviendaMascota: {
+        Form_DestinoViviendaMascota: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        LugarDormirMascota: {
+        Form_LugarDormirMascota: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        ConocimientoGastosMascota: {
+        Form_ConocimientoGastosMascota: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        MascotasActuales: {
+        Form_MascotasActuales: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        PeriodoAjusteMascota: {
+        Form_PeriodoAjusteMascota: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
         }
