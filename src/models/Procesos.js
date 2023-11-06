@@ -10,8 +10,8 @@ module.exports = (sequelize) => {
         autoIncrement: true, 
     },
     Proc_Adop_Formulario: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER, 
+        allowNull: false,
     },
     Proc_Ado_Fecha_Postulacion:{
         type: DataTypes.DATE,
@@ -23,11 +23,11 @@ module.exports = (sequelize) => {
     }
     ,
     Mas_Id:{
-        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        type: DataTypes.INTEGER, 
         allowNull: false,
     },
     Ado_User_Id: {
-        type: DataTypes.INTEGER, // o el tipo de datos correspondiente a la columna en la tabla "Rol"
+        type: DataTypes.INTEGER, 
         allowNull: false,
     }
   }, {timestamps: false});
