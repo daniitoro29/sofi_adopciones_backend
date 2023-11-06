@@ -2,7 +2,7 @@
 const { Proceso } = require("../db");
  
 // Esta función puede interactuar con el modelo
-const createProcess = async (Proc_Ado_Fecha_Postulacion, Proc_Ado_Estado_Proceso, Mas_Id, Ado_User_Id) => await Proceso.create({Proc_Ado_Fecha_Postulacion, Proc_Ado_Estado_Proceso, Mas_Id, Ado_User_Id});
+const createProcess = async (Proc_Adop_Formulario, Proc_Ado_Fecha_Postulacion, Proc_Ado_Estado_Proceso, Mas_Id, Ado_User_Id) => await Proceso.create({Proc_Adop_Formulario, Proc_Ado_Fecha_Postulacion, Proc_Ado_Estado_Proceso, Mas_Id, Ado_User_Id});
 
 const getAllProcess = async () => await Proceso.findAll();
 const deleteProcessById = async (Rol_Id) => await Proceso.destroy({
