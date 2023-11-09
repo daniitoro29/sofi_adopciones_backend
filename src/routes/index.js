@@ -8,9 +8,11 @@ const campaingsRouter = require('./campaignsRouter.js');
 const participantesRouter = require('./participantesRouter.js');
 const procesosRouter = require('./procesosRouter.js');
 const formRouter = require('./formAdoptionRouter.js');
+const loginRouter = require('./loginRouter.js');
+const { requireAuth  } = require('../handlers/loginHandler')
 
 const mainRouter = Router();
-
+mainRouter.use('/form', formRouter);
 mainRouter.use('/users', usersRouter); 
 mainRouter.use('/roles', rolesRouter);
 mainRouter.use('/voluntarios', volunteersRouter)
@@ -19,6 +21,7 @@ mainRouter.use('/adopters', adoptersRouter);
 mainRouter.use('/campaings', campaingsRouter);
 mainRouter.use('/participants', participantesRouter);
 mainRouter.use('/process', procesosRouter);
-mainRouter.use('/form', formRouter);
+
+mainRouter.use('/login',  loginRouter);
 
 module.exports = mainRouter;
