@@ -31,9 +31,9 @@ const deleteParticipantCampaingByIdHandler = async (req,res) => {
 
 const updateParticipantCampaingByIdHandler = async (req, res) => {
     const {id} = req.params;
-    const {Mam_Id,Vol_Id,Ado_User_Id,Mas_Id} = req.body;
+    const {Cam_Id,Vol_Id,Ado_User_Id,Mas_Id} = req.body;
     try {
-        const updateParticipantCampaing = await updateParticipantCampaingById(id, Mam_Id,Vol_Id,Ado_User_Id,Mas_Id);
+        const updateParticipantCampaing = await updateParticipantCampaingById(id, Cam_Id,Vol_Id,Ado_User_Id,Mas_Id);
             res.send(updateParticipantCampaing);
     } catch (error) {
         res.status(400).json({error: error.message});
